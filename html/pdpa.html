@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<!-- Uses Sergey (https://sergey.cool/) as a static site generator for the head, header, and footer -->
+
+<!-- Change title, author, description, page-specific keywords here -->
+    <sergey-import src="head">
+        <sergey-template name="title">SALT - PDPA</sergey-template>
+        <sergey-template name="author">Scott V. Kissinger</sergey-template>
+        <sergey-template name="description">Tracks Singapore's Personal Data Protection Act 2012 (No. 26 of 2012)</sergey-template>
+        <sergey-template name="keywords">data protection, privacy</sergey-template> <!-- page-specific keywords, comma separated -->
+    </sergey-import>
+
+</head>
+
+<body>
+
+    <sergey-import src="header" />
+
+    <main>
+        <article>
+            <h1>Personal Data Protection Act 2012</h1>
+
+            <section>
+                <h2>Overview</h2>
+                <p>The Personal Data Protection Act 2012 (No. 26 of 2012) governs the collection, use and disclosure of personal data by organisations and establishes the Do Not Call Register.</p>
+                <p>The Act became effective on various dates from 2 January 2013 to 2 July 2014.</p>
+                <p>Regulator: <a href="https://www.pdpc.gov.sg/">Personal Data Protection Commission</a> (Ministry of Communications and Information)</p>
+            </section>
+            <hr>
+
+<!-- Subsidiary Legislation --------------------->
+<!-- Act Regulations Rules Orders Notices Notifications Codes Circulars PracticeNotes Guidelines Guidance Decisions Proclamations Forms Explainers FAQs Consultations OfficialCommunications “”– —‘’ -->
+            <div class="tabs">
+
+<!-- Act ---------------------------------------->
+                <input type="radio" name="tabs" id="act" checked="checked">
+                <label for="act">Act</label>
+                <section class="tab" aria-label="Act">
+                    <p><a href="https://sso.agc.gov.sg/Act/PDPA2012">Personal Data Protection Act 2012</a></p>
+                </section>
+
+<!-- Regulations -------------------------------->
+                <input type="radio" name="tabs" id="regulations">
+                <label for="regulations">Regulations</label>
+                <section class="tab" aria-label="Regulations">
+                    <p><a href="https://sso.agc.gov.sg/SL/PDPA2012-S362-2014">Personal Data Protection Regulations 2014</a></p>
+                    <p><a href="https://sso.agc.gov.sg/SL/PDPA2012-S20-2015">Personal Data Protection (Appeal) Regulations 2015</a></p>
+                    <p><a href="https://sso.agc.gov.sg/SL/PDPA2012-S759-2013">Personal Data Protection (Composition of Offences) Regulations 2013</a></p>
+                    <p><a href="https://sso.agc.gov.sg/SL/PDPA2012-S709-2013">Personal Data Protection (Do Not Call Registry) Regulations 2013</a></p>
+                    <p><a href="https://sso.agc.gov.sg/SL/PDPA2012-S455-2014">Personal Data Protection (Enforcement) Regulations 2014</a></p>
+                </section>
+
+<!-- Orders ------------------------------------->
+                <input type="radio" name="tabs" id="orders">
+                <label for="orders">Orders</label>
+                <section class="tab" aria-label="Orders">
+                    <p><a href="https://sso.agc.gov.sg/SL/PDPA2012-S817-2013">Personal Data Protection (Exemption from section 43) Order 2013</a></p>
+                </section>
+
+<!-- Notifications ------------------------------>
+                <input type="radio" name="tabs" id="notifications">
+                <label for="notifications">Notifications</label>
+                <section class="tab" aria-label="Notifications">
+                    <p><a href="https://sso.agc.gov.sg/SL/PDPA2012-S90-2015">Personal Data Protection (Prescribed Healthcare Bodies) Notification 2015</a></p>
+                    <p><a href="https://sso.agc.gov.sg/SL/PDPA2012-S368-2014">Personal Data Protection (Prescribed Law Enforcement Agencies) Notification 2014</a></p>
+                    <p><a href="https://sso.agc.gov.sg/SL/PDPA2012-S149-2013">Personal Data Protection (Statutory Bodies) Notification 2013</a></p>
+                </section>
+
+<!-- Guidelines --------------------------------->
+                <input type="radio" name="tabs" id="guidelines">
+                <label for="guidelines">Guidelines</label>
+                <section class="tab" aria-label="Guidelines">
+                    <p>The PDPC has published over 30 guidelines for the Act. They can be accessed from the PDPC’s <a href="https://www.pdpc.gov.sg/Legislation-and-Guidelines/Guidelines">Guidelines</a> webpage.</p>
+                </section>
+
+<!-- Decisions ---------------------------------->
+                <input type="radio" name="tabs" id="decisions">
+                <label for="decisions">Decisions</label>
+                <section class="tab" aria-label="Decisions">
+                    <p><a href="https://www.pdpc.gov.sg/Commissions-Decisions/Data-Protection-Enforcement-Cases">Data Protection Enforcement Cases</a></p>
+                </section>
+
+<!-- Consultations ------------------------------>
+                <input type="radio" name="tabs" id="consultations">
+                <label for="consultations">Consultations</label>
+                <section class="tab" aria-label="Consultations">
+                    <p><a href="https://www.pdpc.gov.sg/Legislation-and-Guidelines/Public-Consultations#DATAPORT">Public Consultation on Proposed Data Portability and Data Innovation Provisions</a>
+                    <div class="indent_one">
+                        <table>
+                            <tr><td class="col_one">Status:</td><td><span class="consult_responded">RESPONDED</span></td></tr>
+                            <tr><td><p></p></td></tr>
+                            <tr><td>Consultation No.:</td><td>N/A</td></tr>
+                            <tr><td>Start Date:</td><td>22 May 2019</td></tr>
+                            <tr><td>Closing Date:</td><td>17 July 2019</td></tr>
+                            <tr><td>Response Date:</td><td>20 January 2020</td></tr>
+                        </table>
+                    </div>
+                </section>
+
+            </div>           
+        </article>
+    </main>
+    
+<!-- Change revision date here -->
+    <sergey-import src="footer">
+        <sergey-template name="revdate">26 January 2020</sergey-template>
+    </sergey-import>
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+/* Style sheet for the Singapore Act & Legislation Tracker website */
+
+/* Official colors of the Singapore flag (https://www.nhb.gov.sg/what-we-do/our-work/community-engagement/education/resources/national-symbols/national-flag):
+ *   Red - Pantone 32 (RGB ED2939)
+ *   White - Pantone White (RGB FFFFFF)
+ */
+
+/* *********************************************
+ * reset and default styles
+ * *********************************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  max-width: 50rem;
+  padding: 0.75rem 1rem; /* ensures content doesn't run flush to the edges of the viewport */
+  margin: 0 auto; /* centers the entire page horizontally */  
+  background: #f4f4f4;
+  font-family: 'Lora', serif;
+  font-size: 1.125em; /* smaller for a smaller screen */
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    font-size: 1.3em; /* larger than the default for a larger screen */    
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+p {
+  font-size: 100%;
+  margin: 0 0 1em 0; /* space below */
+}
+
+a {
+  text-decoration: none; /* remove underline from links */
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* *********************************************
+ * top navigation dropdown menu
+ * h/t https://github.com/Godsont/Flexbox-Dropdown-Menu/blob/master/style.css
+ * *********************************************/
+
+/* container for the entire navbar */
+.header_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* vertical center */
+  background: #ed2939; /* for browsers that don't support gradients */
+	background: linear-gradient(to top, #ed2939 0%, #f15461 100%);  
+	background: -moz-linear-gradient(to top, #ed2939 0%, #f15461 100%); 
+	background: -webkit-linear-gradient(to top, #ed2939 0%, #f15461 100%); /* was f55353 */
+  padding: 0 0.75rem; /* provides extra width for rounded corners */
+  border-radius: 1rem;
+	box-shadow: 5px 6px 8px rgba(0,0,0,0.2);
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  line-height: 21px; /* equal to the height of the logo */
+}
+
+.logo a {
+  padding: 0;
+}
+
+/* picture tag has a minimum height equal to the font size, so make sure it's less than the picture height */
+picture {
+  font-size: 0;
+  line-height: 0;
+}
+
+.main-nav {
+  display: flex; /* flex only applies to the next level of container so it must be reset at this level */
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex; /* enable flex for list items */
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav a {
+  color: #f6f7f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem .75rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.main-nav a:hover {
+  background: #5476b5;
+}
+
+.main-nav li {
+  position: relative; /* let this item serve as anchor for submenu */
+  width: auto;
+}
+
+/* on hover this changes the display style for the submenu list items */
+.main-nav li:hover .submenu > li {
+  display: block;
+  flex-direction: column;
+  top: 0px;
+}
+
+.submenu li {
+  display: none;
+  top: 0px;
+  width: 100%;
+  min-width: 8rem;
+}
+
+/* display the submenus as columns */
+.submenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background: #5476b5;
+}
+
+.submenu li {
+  position: relative;
+}
+
+.submenu li:hover .submenu-2 li {
+  display: block;
+  background: #5476b5;
+}
+
+.submenu a {
+  padding: .75rem .5rem;
+  width: auto;
+}
+
+.submenu-2 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  left: 100%;
+  width: auto;
+  background: #5476b5;
+}
+
+.submenu-2 li {
+  display: none;
+}
+
+.submenu li .submenu-2 li:hover {
+  background: #254c92;
+}
+
+.arrow {
+  margin-left: 4px;
+  color: #eee;
+  font-size: 10px;
+}
+
+/* pushes secondary items to the right side of the navbar */
+.sec-nav {
+  display: flex;
+  vertical-align: middle;
+  /*margin-left: auto; uncomment this if no pill */
+}
+
+.sec-nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.sec-nav li {
+  text-align: center;
+  position: relative;
+}
+
+/* right navbar white text for legibility */
+.sec-nav a {
+  color: white;
+  display: flex;
+  padding: 1rem .5rem;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.sec-nav a:hover {
+  background: #5476b5;
+}
+
+/* the proof of concept pill */
+.poc {
+  display: inline-block;
+  height: auto;
+  background: blue;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.75rem;
+  margin: 0 auto;
+}
+
+/* *********************************************
+ * main body styles
+ * *********************************************/
+
+h1 {
+  margin: 0.5em 0;
+  text-align: center;
+  font-size: 1.75em;
+  color: #ED2939; /* SG flag red */
+}
+
+h2 {
+  margin: 0.5em 0;
+  font-size: 1.25em;
+}
+
+h3 {
+  margin: 0.5em 0;
+  font-size: 1em;
+}
+
+p {
+  /*margin: 0.75em 0;*/
+  font-size: 1em;
+}
+
+ul {
+  padding-left: 3rem;
+  margin: 0.5em 0;
+}
+
+.consult_open {
+  color: green;
+}
+
+.consult_closed {
+  color: red;
+}
+
+.consult_responded {
+  color: mediumslateblue;
+}
+
+.d2 {
+  font-size: 28px;
+}
+
+.d3 {
+  font-size: 24px;
+}
+
+hr {
+  margin: 36px 0px 36px 0px;
+}
+
+div.indent_one {
+  margin-left: 2em;
+}
+
+td.col_one {
+  width: 9em;
+}
+
+/* *********************************************
+ * tab styling
+ * h/t webdevtrick ( https://webdevtrick.com/pure-css-tabs-responsive/ )
+ * *********************************************/
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabs label {
+  order: 1;
+  display: block;
+  width: auto;
+  padding: 0.8rem 1rem;
+  margin-right: 0.2rem;
+  border-radius: 15px 15px 0 0;
+  cursor: pointer;
+  background:  #aaa;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  transition: background ease 0.2s;
+}
+
+.tabs .tab {
+  order: 99;
+  flex-grow: 1;
+  width: 100%;
+  display: none;
+  padding: 1rem 0.5rem;
+  background: #dfdfdf;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs input[type="radio"]:checked + label {
+  background: #dfdfdf;
+  color: #ed2939;
+  font-weight: bold;
+}
+
+.tabs input[type="radio"]:checked + label + .tab {
+  display: block;
+}
+
+@media (max-width: 45em) {
+  .tabs .tab,
+  .tabs label {
+    order: initial;
+  }
+
+  .tabs label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
+}
+
+/* *********************************************
+ * footer styles
+ * *********************************************/
+
+footer {
+  background: #4a4a4a;  
+}
+
+.footer_content {
+  max-width: 50rem;
+  padding: 0 1rem; /* ensures content doesn't run flush to left and right edges of the viewport */
+  margin: 2rem auto 0 auto; /* leaves space above and centers the entire page horizontally */  
+  color: #f0f0f0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.footer_content p {
+  margin: 0 0 .5rem 0;
+}
+
+.footer_content a {
+  color: #fffc7c;
+}
+
+.footer_content a:visited {
+  color: #f0f0f0;
+}
+
+.footer_content a:hover {
+  color: #fb7a83;
+}
+
+.footer_flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer_left {
+  width: 50%;
+  padding: 1rem;
+}
+
+.footer_right {
+  width: 50%;
+  padding: 1rem;
+}
+
+.copr {
+  width: 100%;
+  padding: 0 0 0.5rem 0;
+  text-align: center;
+}
