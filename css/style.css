@@ -76,7 +76,7 @@ ul, ol {
   padding: 0;
 }
 
-/* picture tag has a minimum height equal to the font size, so make sure it's less than the picture height */
+/* picture tag has a minimum height equal to the font size, so make sure the font size is less than the picture height */
 picture {
   font-size: 0;
   line-height: 0;
@@ -298,6 +298,7 @@ td.col_one {
   display: block;
   width: auto;
   padding: 0.8rem 1rem;
+  margin-top: 0.2rem;
   margin-right: 0.2rem;
   border-radius: 15px 15px 0 0;
   cursor: pointer;
