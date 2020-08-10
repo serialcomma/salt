@@ -246,6 +246,11 @@ p {
   font-size: 1em;
 }
 
+.text__bold_red {
+  font-weight: bold;
+  color: #ED2939; /* SG flag red */
+}
+
 ul {
   padding-left: 3rem;
   margin: 0.5em 0;
